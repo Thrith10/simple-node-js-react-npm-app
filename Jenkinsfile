@@ -18,8 +18,6 @@ pipeline {
                             -s './'
                             -f 'ALL' 
                             --prettyPrint 
-                            -ApiKey "2609324e-ec20-4afe-bb35-e16a0439fadd"''', 
-                odcInstallation: 'OWASP Dependency-Check Vulnerabilities'
         
                 dependencyCheckPublisher pattern: 'dependency-check-report.xml'
             }
