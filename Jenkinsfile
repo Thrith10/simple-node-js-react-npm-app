@@ -12,15 +12,15 @@ pipeline {
             }
         }
         stage('OWASP Dependency-Check Vulnerabilities') {
-            steps {
+              steps {
                 dependencyCheck additionalArguments: ''' 
                             -o './'
                             -s './'
                             -f 'ALL' 
-                            --prettyPrint 
+                            --prettyPrint''', odcInstallation: 'OWASP Dependency-Check Vulnerabilities'
         
                 dependencyCheckPublisher pattern: 'dependency-check-report.xml'
+              }
             }
-        }
     }
 }
